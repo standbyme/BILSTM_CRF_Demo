@@ -1,8 +1,6 @@
 from itertools import takewhile
 from collections import defaultdict
 
-line = [('财','B-F3'),('富','I-F3'),('宝','B-F2')]
-
 def split(line):
     result = []
     temp_result = []
@@ -28,5 +26,5 @@ def helper(a,b):
         result[y].append(x)
     return result
 
-res = helper('烟锁池塘柳',['0','B-F2','I-F2','0','B-F1'])
-print(res)
+# res = helper('烟锁池塘柳',['0','B-F2','I-F2','0','B-F1'])
+# print(res)

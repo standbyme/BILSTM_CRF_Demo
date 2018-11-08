@@ -9,6 +9,7 @@ import pickle
 from torch.utils.data import Dataset
 from torch import nn
 
+
 torch.manual_seed(1)
 
 class BILSTM_CRF(nn.Module):
@@ -463,6 +464,5 @@ def getData(data):
             else:
                 s += word
 
-    print(result)
     return result
 
