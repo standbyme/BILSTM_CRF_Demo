@@ -446,7 +446,7 @@ def getData(data):
                 tag = index2tag[tag_id]
             else:
                 tag = '0'
-            print(tag)
+            result.append(tag)
             # CHY
             if flag and tag[0]=='B':
                 curTag = tag.split('-')[1:]
@@ -462,12 +462,7 @@ def getData(data):
 
             else:
                 s += word
-        result.append(s)
-        if i1 not in test_x_fenge:
-            # f.write('\n')
 
-            result.append(' ')
-    message = ''.join(str(s) for s in result)
-    print(message)
-    return message
+    print(result)
+    return result
 
