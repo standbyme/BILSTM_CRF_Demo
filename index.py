@@ -19,7 +19,7 @@ class LTPExtractTripleAPI(Resource):
         parser = reqparse.RequestParser()
         parser.add_argument('UserInput', type=str, help='UserInput')
         args = parser.parse_args()
-        UserInput = urllib.request.unquote(args['UserInput'])
+        UserInput = urllib.request.unquote(args['UserInput']).replace(' ','，')
 
         result = helper(UserInput,getData(UserInput))
 
