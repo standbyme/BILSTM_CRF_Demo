@@ -1,7 +1,7 @@
 from itertools import takewhile
-import time
+from collections import defaultdict
 
-line = [('财','B-F3'),('富','I-F3'),('宝','B-F3')]
+line = [('财','B-F3'),('富','I-F3'),('宝','B-F2')]
 
 def split(line):
     result = []
@@ -20,6 +20,13 @@ def split(line):
 
 
 def convert(value):
-    return (''.join(list(map(lambda x: x[0],value))),value[0][1])
+    return (''.join(list(map(lambda x: x[0],value))),value[0][1][2:])
 
-print(list(map(convert,split(line))))
+def helper(a,b):
+    result = defaultdict(list)
+    for x,y in list(map(convert,split(list(filter(lambda x: x[1]!='0',zip(a,b)))))):
+        result[y].append(x)
+    return result
+
+res = helper('烟锁池塘柳',['0','B-F2','I-F2','0','B-F1'])
+print(res)
