@@ -1,6 +1,8 @@
 from itertools import takewhile
 from collections import defaultdict
 
+label_dict = {'F1':'股票','F2':'股票代码','F3':'理财产品'}
+
 def split(line):
     result = []
     temp_result = []
@@ -22,9 +24,9 @@ def convert(value):
 
 def helper(a,b):
     result = defaultdict(list)
-    for x,y in list(map(convert,split(list(filter(lambda x: x[1]!='0',zip(a,b)))))):
+    for x,y in list(map(convert,split(list(filter(lambda x: (x[1]!='0' and x[1]!='pad'),zip(a,b)))))):
         result[y].append(x)
-    return result
+    return [{'label':label_dict[k],'value':'    '.join(v)} for k,v in result.items()]
 
 # res = helper('烟锁池塘柳',['0','B-F2','I-F2','0','B-F1'])
 # print(res)
