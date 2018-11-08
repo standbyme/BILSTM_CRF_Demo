@@ -29,4 +29,4 @@ class LTPExtractTripleAPI(Resource):
 api.add_resource(LTPExtractTripleAPI, '/')
 
 if __name__ == '__main__':
-    app.run(port=1234)
+    app.run(host="0.0.0.0",port=1234)
