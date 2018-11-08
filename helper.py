@@ -1,7 +1,7 @@
 from itertools import takewhile
 import time
 
-# [('财','B-F3'),('富','I-F3'),('宝','B-F3')]
+line = [('财','B-F3'),('富','I-F3'),('宝','B-F3')]
 
 def split(line):
     result = []
@@ -9,7 +9,6 @@ def split(line):
     while line:
         # print(line)
         head,*tail = line
-        time.sleep(2)
         temp_result.append(head)
         other = list(takewhile(lambda x: x[1][0] != 'B',tail))
         # print(other)
@@ -17,6 +16,10 @@ def split(line):
         result.append(temp_result)
         temp_result = []
         line = tail[len(other):]
+    return result
 
 
-print(result)
+def convert(value):
+    return (''.join(list(map(lambda x: x[0],value))),value[0][1])
+
+print(list(map(convert,split(line))))
