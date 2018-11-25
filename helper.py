@@ -1,7 +1,7 @@
 from itertools import takewhile
 from collections import defaultdict
 
-label_dict = {'F1':'股票','F2':'股票代码','F3':'理财产品'}
+label_dict = {'F1':'股票','F2':'股票代码','F3':'理财产品','C1':'品牌','C2':'车系','C3':'车型','C4':'零部件'}
 
 def split(line):
     result = []

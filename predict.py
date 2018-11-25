@@ -359,17 +359,17 @@ class TextDataSet(Dataset):
     def __len__(self):
         return len(self.inputs)
 
-def getData(data):
+def getData(data,topic:str):
 
     os.environ['CUDA_VISIBLE_DEVICES'] = '0'
     use_cuda = torch.cuda.is_available()
     formatData(data)
     # word2index, index2word, tag2index, index2tag = data_preprocess.get_dic()
     # print('加载词典')
-    word2index = pickle.load(open(r'nerApi/models/word2index', 'rb'))
-    index2word = pickle.load(open(r'nerApi/models/index2word', 'rb'))
-    tag2index = pickle.load(open(r'nerApi/models/tag2index', 'rb'))
-    index2tag = pickle.load(open(r'nerApi/models/index2tag', 'rb'))
+    word2index = pickle.load(open('nerApi/{}/word2index'.format(topic), 'rb'))
+    index2word = pickle.load(open('nerApi/{}/index2word'.format(topic), 'rb'))
+    tag2index = pickle.load(open('nerApi/{}/tag2index'.format(topic), 'rb'))
+    index2tag = pickle.load(open('nerApi/{}/index2tag'.format(topic), 'rb'))
     # test_x_cut, test_y_cut, test_mask, test_x_len, test_x_cut_word, test_x_fenge = data_preprocess.getTest_xy(
     #     # './data/test.txt')
     test_x_cut, test_y_cut, test_mask, test_x_len, test_x_cut_word, test_x_fenge = \
@@ -390,7 +390,7 @@ def getData(data):
     else:
         model = BILSTM_CRF(vcab_size, tag2index, emb_dim, hidden_dim, batch_size, use_cuda)
 
-    model.load_state_dict(torch.load(r'nerApi/models/best_model.pth'))
+    model.load_state_dict(torch.load('nerApi/{}/best_model.pth'.format(topic)))
 
     # model.eval()
     test_loss = 0
