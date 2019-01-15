@@ -24,7 +24,7 @@ class Financial(Resource):
         try:
             result = helper(UserInput,getData(UserInput,'Financial'))
         except:
-            result = {'Result': []}
+            result = []
 
         
 
