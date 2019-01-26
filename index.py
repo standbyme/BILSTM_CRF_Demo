@@ -19,158 +19,155 @@ class Financial(Resource):
         parser = reqparse.RequestParser()
         parser.add_argument('UserInput', type=str, help='UserInput')
         args = parser.parse_args()
-        UserInput = urllib.request.unquote(args['UserInput']).replace(' ','，')
+        UserInput = urllib.request.unquote(args['UserInput']).replace(' ', '，')
 
         try:
-            result = helper(UserInput,getData(UserInput,'Financial'))
+            # result = helper(UserInput,getData(UserInput,'Financial'))
+            result = [{'type': 'SYS0', 'value': '烟'}, {'type': 'F2', 'value': '锁池'}, {
+                'type': 'F3', 'value': '塘'}, {'type': 'F1', 'value': '柳'}, {'type': 'F2', 'value': '锁池'}, {
+                'type': 'F3', 'value': '塘'}, {'type': 'F1', 'value': '柳'}, {'type': 'F2', 'value': '锁池'}, {
+                'type': 'F3', 'value': '塘'}, {'type': 'F1', 'value': '柳'}, {'type': 'F2', 'value': '锁池'}, {
+                'type': 'F3', 'value': '塘'}, {'type': 'F1', 'value': '柳'}, {'type': 'F2', 'value': '锁池'}, {
+                'type': 'F3', 'value': '塘'}, {'type': 'F1', 'value': '柳'}, {'type': 'F2', 'value': '锁池'}, {
+                'type': 'F3', 'value': '塘'}, {'type': 'F1', 'value': '柳'}, {'type': 'F2', 'value': '锁池'}, {
+                'type': 'F3', 'value': '塘'}, {'type': 'F1', 'value': '柳'}]
         except:
             result = []
 
-        
-
         return {'Result': result}
+
 
 class Car(Resource):
     def post(self):
         parser = reqparse.RequestParser()
         parser.add_argument('UserInput', type=str, help='UserInput')
         args = parser.parse_args()
-        UserInput = urllib.request.unquote(args['UserInput']).replace(' ','，')
+        UserInput = urllib.request.unquote(args['UserInput']).replace(' ', '，')
 
         try:
-            result = helper(UserInput,getData(UserInput,'Car'))
+            result = helper(UserInput, getData(UserInput, 'Car'))
         except:
             result = {'Result': []}
 
-        
-
         return {'Result': result}
+
 
 class Dining(Resource):
     def post(self):
         parser = reqparse.RequestParser()
         parser.add_argument('UserInput', type=str, help='UserInput')
         args = parser.parse_args()
-        UserInput = urllib.request.unquote(args['UserInput']).replace(' ','，')
+        UserInput = urllib.request.unquote(args['UserInput']).replace(' ', '，')
 
         try:
-            result = helper(UserInput,getData(UserInput,'Dining'))
+            result = helper(UserInput, getData(UserInput, 'Dining'))
         except:
             result = {'Result': []}
 
-        
-
         return {'Result': result}
+
 
 class Education(Resource):
     def post(self):
         parser = reqparse.RequestParser()
         parser.add_argument('UserInput', type=str, help='UserInput')
         args = parser.parse_args()
-        UserInput = urllib.request.unquote(args['UserInput']).replace(' ','，')
+        UserInput = urllib.request.unquote(args['UserInput']).replace(' ', '，')
 
         try:
-            result = helper(UserInput,getData(UserInput,'Education'))
+            result = helper(UserInput, getData(UserInput, 'Education'))
         except:
             result = {'Result': []}
 
-        
-
         return {'Result': result}
+
 
 class Entertainment(Resource):
     def post(self):
         parser = reqparse.RequestParser()
         parser.add_argument('UserInput', type=str, help='UserInput')
         args = parser.parse_args()
-        UserInput = urllib.request.unquote(args['UserInput']).replace(' ','，')
+        UserInput = urllib.request.unquote(args['UserInput']).replace(' ', '，')
 
         try:
-            result = helper(UserInput,getData(UserInput,'Entertainment'))
+            result = helper(UserInput, getData(UserInput, 'Entertainment'))
         except:
             result = {'Result': []}
 
-        
-
         return {'Result': result}
+
 
 class Game(Resource):
     def post(self):
         parser = reqparse.RequestParser()
         parser.add_argument('UserInput', type=str, help='UserInput')
         args = parser.parse_args()
-        UserInput = urllib.request.unquote(args['UserInput']).replace(' ','，')
+        UserInput = urllib.request.unquote(args['UserInput']).replace(' ', '，')
 
         try:
-            result = helper(UserInput,getData(UserInput,'Game'))
+            result = helper(UserInput, getData(UserInput, 'Game'))
         except:
             result = {'Result': []}
 
-        
-
         return {'Result': result}
+
 
 class House(Resource):
     def post(self):
         parser = reqparse.RequestParser()
         parser.add_argument('UserInput', type=str, help='UserInput')
         args = parser.parse_args()
-        UserInput = urllib.request.unquote(args['UserInput']).replace(' ','，')
+        UserInput = urllib.request.unquote(args['UserInput']).replace(' ', '，')
 
         try:
-            result = helper(UserInput,getData(UserInput,'House'))
+            result = helper(UserInput, getData(UserInput, 'House'))
         except:
             result = {'Result': []}
 
-        
-
         return {'Result': result}
+
 
 class Journey(Resource):
     def post(self):
         parser = reqparse.RequestParser()
         parser.add_argument('UserInput', type=str, help='UserInput')
         args = parser.parse_args()
-        UserInput = urllib.request.unquote(args['UserInput']).replace(' ','，')
+        UserInput = urllib.request.unquote(args['UserInput']).replace(' ', '，')
 
         try:
-            result = helper(UserInput,getData(UserInput,'Journey'))
+            result = helper(UserInput, getData(UserInput, 'Journey'))
         except:
             result = {'Result': []}
 
-        
-
         return {'Result': result}
+
 
 class Medical(Resource):
     def post(self):
         parser = reqparse.RequestParser()
         parser.add_argument('UserInput', type=str, help='UserInput')
         args = parser.parse_args()
-        UserInput = urllib.request.unquote(args['UserInput']).replace(' ','，')
+        UserInput = urllib.request.unquote(args['UserInput']).replace(' ', '，')
 
         try:
-            result = helper(UserInput,getData(UserInput,'Medical'))
+            result = helper(UserInput, getData(UserInput, 'Medical'))
         except:
             result = {'Result': []}
 
-        
-
         return {'Result': result}
+
 
 class Physical(Resource):
     def post(self):
         parser = reqparse.RequestParser()
         parser.add_argument('UserInput', type=str, help='UserInput')
         args = parser.parse_args()
-        UserInput = urllib.request.unquote(args['UserInput']).replace(' ','，')
+        UserInput = urllib.request.unquote(args['UserInput']).replace(' ', '，')
 
         try:
-            result = helper(UserInput,getData(UserInput,'Physical'))
+            result = helper(UserInput, getData(UserInput, 'Physical'))
         except:
             result = {'Result': []}
-
-        
 
         return {'Result': result}
 
@@ -187,4 +184,4 @@ api.add_resource(Medical, '/medical')
 api.add_resource(Physical, '/physical')
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0",port=1234)
+    app.run(host="0.0.0.0", port=1234)
