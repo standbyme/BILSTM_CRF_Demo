@@ -13,7 +13,7 @@ def reduce_function(acc, current):
     type_code: str = None
 
     if flag == '0':
-        type_code = '0'
+        type_code = 'SYS0'
     else:
         type_code = current[1][2:]
 
